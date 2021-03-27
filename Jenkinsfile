@@ -4,8 +4,8 @@ pipeline {
         stage('git repo & clean') {
             steps {
               sh "rm  -rf TicketBookingServiceJunitTesting"
-            //    sh "git clone https://github.com/Shahrex/TestingProject.git"
-           //     sh "mvn clean -f TestingProject"
+              sh "git clone https://github.com/Shahrex/TestingProject.git"
+              sh "mvn clean -f TestingProject"
             }
         }
         stage('install') {
