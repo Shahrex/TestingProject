@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('git repo & clean') {
             steps {
-              // bat "rm  -rf TicketBookingServiceJunitTesting"
+              // sh "rm  -rf TicketBookingServiceJunitTesting"
                 sh "git clone https://github.com/Shahrex/TestingProject.git"
                 sh "mvn clean -f TestingProject"
             }
