@@ -10,17 +10,17 @@ pipeline {
         }
         stage('install') {
             steps {
-                bat "mvn install -f TestingProject"
+                sh "mvn install -f TestingProject"
             }
         }
         stage('test') {
             steps {
-                bat "mvn test -f TestingProject"
+                sh "mvn test -f TestingProject"
             }
         }
         stage('package') {
             steps {
-                bat "mvn package -f TestingProject"
+                sh "mvn package -f TestingProject"
             }
         }
     }
