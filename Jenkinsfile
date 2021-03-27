@@ -10,17 +10,17 @@ pipeline {
         }
         stage('install') {
             steps {
-              //  sh "mvn install -f TestingProject"
+               sh "mvn install -f TestingProject"
             }
         }
         stage('test') {
             steps {
-           //     sh "mvn test -f TestingProject"
+               sh "mvn test -f TestingProject"
             }
         }
         stage('package') {
             steps {
-          //     sh "mvn package -f TestingProject"
+               sh "mvn package -f TestingProject"
             }
         }
     }
