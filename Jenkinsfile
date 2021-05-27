@@ -1,27 +1,22 @@
 pipeline {
-    agent any
-    stages {
-        stage('git repo & clean') {
-            steps {
-              sh "rm  -rf TestingProject"
-              sh "git clone https://github.com/Shahrex/TestingProject.git"
-              sh "mvn clean -f TestingProject"
-            }
+   agent any
+
+   stages {
+      stage('Build') {
+        steps {
+          echo 'Building...'
+          echo "Running ${env.BUILD_ID} ${env.BUILD_DISPLAY_NAME} on ${env.NODE_NAME} and JOB ${env.JOB_NAME}"
         }
-        stage('install') {
-            steps {
-               sh "mvn install -f TestingProject"
-            }
-        }
-        stage('test') {
-            steps {
-               sh "mvn test -f TestingProject"
-            }
-        }
-        stage('package') {
-            steps {
-               sh "mvn package -f TestingProject"
-            }
-        }
-    }
+   }
+   stage('Test') {
+     steps {
+        echo 'Testing...'
+     }
+   }
+   stage('Deploy') {
+     steps {
+       echo 'Deploying...'
+     }
+   }
+  }
 }
